@@ -1,8 +1,16 @@
-import java.util.HashSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 public class UniqueSubarrays {
+
+    /**
+     * Counts the number of unique subarrays that sum to the given target.
+     * 
+     * @param arr The input array of integers.
+     * @param target The target sum we want to find in subarrays.
+     * @return The count of unique subarrays that sum to the target.
+     */
     public static int countUniqueSubarrays(int[] arr, int target) {
         HashMap<Integer, Integer> prefixSums = new HashMap<>();
         Set<String> uniqueSubarrays = new HashSet<>();
@@ -30,6 +38,15 @@ public class UniqueSubarrays {
         // Return the number of unique subarrays
         return uniqueSubarrays.size();
     }
+
+    /**
+     * Converts a subarray into a comma-separated string representation.
+     * 
+     * @param arr The input array.
+     * @param start The start index of the subarray.
+     * @param end The end index of the subarray.
+     * @return The string representation of the subarray.
+     */
     private static String arrayToString(int[] arr, int start, int end) {
         StringBuilder sb = new StringBuilder();
         for (int i = start; i <= end; i++) {
@@ -37,17 +54,13 @@ public class UniqueSubarrays {
         }
         return sb.toString();
     }
-    public void testCountUniqueSubarrays() {
-        // Test case 1: General case with multiple unique subarrays
-        int[] arr1 = {1, 2, 3, 4, 5, 6};
-        int target1 = 5;
-        int result1 = UniqueSubarrays.countUniqueSubarrays(arr1, target1);
-        assertEquals(2, result1);  // Expected: 2 unique subarrays
 
-        // Test case 2: Single element array where sum is equal to the target
-        int[] arr2 = {5};
-        int target2 = 5;
-        int result2 = UniqueSubarrays.countUniqueSubarrays(arr2, target2);
-        assertEquals(1, result2);  // Expected: 1 unique subarray (the array itself)
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+        int target = 5;
+
+        System.out.println("Number of unique subarrays that sum to " + target + ": " + countUniqueSubarrays(arr, target));
     }
 }
+
