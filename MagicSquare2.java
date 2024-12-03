@@ -1,6 +1,18 @@
 public class MagicSquare2 {
 // Static method to determine if a 2D matrix is a magic square
 public static boolean isMagicSquare(int[][] matrix) {
+    /**
+     * Static method to determine if a 2D matrix is a magic square.
+     * 
+     * @param matrix 2D array representing the matrix to be checked.
+     *               The matrix must be a square (number of rows equals number of columns).
+     * @return true if the matrix is a magic square, otherwise false.
+     * 
+     * A matrix is a magic square if:
+     * - The sum of the numbers in each row is equal.
+     * - The sum of the numbers in each column is equal.
+     * - The sum of the numbers in both the main diagonal and anti-diagonal are equal.
+     */
     // Check if the matrix is square (rows == columns)
     int n = matrix.length;
     for (int i = 0; i < n; i++) {
